@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap como Menu</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+    <style>
+        body {
+            background: #363636;
+            color: #fff;
+        }
+
+        .carousel-item {
+            position: relative;
+        }
+
+        .carousel-item img {
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .carousel-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.5) 60%,
+                rgba(0, 0, 0, 0.5) 100%
+            );
+            z-index: 1;
+        }
+
+        .carousel-caption {
+            z-index: 2;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            color: #fff;
+        }
+
+        section {
+            padding-top: 16px;
+        }
+
+        .container {
+            margin-top: 16px;
+        }
+
+        .card {
+            height: 570px;
+            margin-top: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .btn-full {
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .form-control {
+            width: 400px;
+        }
+
+        .form button {
+            margin-top: 16px;
+            width: 400px;
+        }
+
+        footer {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- carousel -->
+<div id="carousel-de-imagens" class="carousel carousel-fade slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <a href="#secao1" class="carousel-item active">
+            <div class="overlay"></div>
+            <img class="d-block w-100" src="https://i.pinimg.com/originals/94/f0/a0/94f0a0a167ec900a5da031e8bfd4e6d7.gif" alt="Imagem representando uma cidade no estilo Cyberpunk.">
+            <div class="carousel-caption">
+                <h4>Sobre animes</h4>
+                <p>Clique para saber mais sobre animes</p>
+            </div>
+        </a>
+        <a href="#secao2" class="carousel-item">
+            <div class="overlay"></div>
+            <img class="d-block w-100" src="https://i.pinimg.com/originals/d6/f5/e8/d6f5e861d4d0b70aaa2b9f27eaf12056.gif" alt="Homem montado em um cavalo em cima de uma montanha - The Witcher 3">
+            <div class="carousel-caption">
+                <h4>Sobre gatos</h4>
+                <p>Clique para saber mais sobre gatos</p>
+            </div>
+        </a>
+        <a href="#secao3" class="carousel-item">
+            <div class="overlay"></div>
+            <img class="d-block w-100" src="https://i.pinimg.com/originals/f2/8b/ba/f28bbad3739a229cf75d79df42846edd.gif" alt="Homem em cima de algo olhando para uma cidade estilo Cyberpunk.">
+            <div class="carousel-caption">
+                <h4>Entre em contato</h4>
+                <p>Como entrar em contato conosco</p>
+            </div>
+        </a>
+    </div>
+    <!-- botões do carousel -->
+    <button data-bs-target="#carousel-de-imagens" data-bs-slide="prev" class="carousel-control-prev" type="button">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button data-bs-target="#carousel-de-imagens" data-bs-slide="next" class="carousel-control-next" type="button">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+    <!-- indicadores do carousel -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carousel-de-imagens" class="active" data-bs-slide-to="0"></button>
+        <button type="button" data-bs-target="#carousel-de-imagens" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carousel-de-imagens" data-bs-slide-to="2"></button>
+    </div>
+</div>
+
+<!-- Seção sobre anime -->
+<section id="secao1">
+    <div class="container">
+        <h2>Animes</h2>
+        <div class="row">
+            <!-- card 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card text-bg-dark">
+                    <img src="https://i.pinimg.com/enabled/564x/18/fd/b0/18fdb0933b53ce50e3706188663d5bab.jpg" alt="Desenho estilo anime">
+                    <div class="card-body">
+                        <h4 class="card-title">Ilustração</h4>
+                        <h6 class="card-subtitle">Estilo Anime</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus voluptatum necessitatibus suscipit?</p>
+                        <a href="#" class="btn btn-secondary btn-full">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card text-bg-dark">
+                    <img src="https://i.pinimg.com/enabled/564x/fe/34/aa/fe34aab32c2b95bec60ac6812738c3be.jpg" alt="Desenho estilo anime">
+                    <div class="card-body">
+                        <h4 class="card-title">Ilustração</h4>
+                        <h6 class="card-subtitle">Estilo Anime</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus voluptatum necessitatibus suscipit?</p>
+                        <a href="#" class="btn btn-primary btn-full">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card text-bg-dark">
+                    <img src="https://i.pinimg.com/736x/7f/83/f8/7f83f839cc81e450e715a210867fb6f3.jpg" alt="Desenho estilo anime">
+                    <div class="card-body">
+                        <h4 class="card-title">Ilustração</h4>
+                        <h6 class="card-subtitle">Estilo Anime</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus voluptatum necessitatibus suscipit?</p>
+                        <a href="#" class="btn btn-primary btn-full">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção sobre gatos -->
+<section id="secao2">
+    <div class="container">
+        <h2>Gatos</h2>
+        <div class="row">
+        <!-- card 4 -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card text-bg-dark">
+                    <img src="https://i.pinimg.com/enabled/564x/04/77/2a/04772a97fac849ba2ef35d99947a8b52.jpg" alt="Desenho de um gato">
+                    <div class="card-body">
+                        <h4 class="card-title">Ilustração</h4>
+                        <h6 class="card-subtitle">Pintura digital</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus voluptatum necessitatibus suscipit?</p>
+                        <a href="#" class="btn btn-primary btn-full">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 5 -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card text-bg-dark">
+                    <img src="https://i.pinimg.com/enabled/564x/b8/ba/f3/b8baf3e906fa3e3f9628c5d4f3abd722.jpg" alt="Desenho de um gato">
+                    <div class="card-body">
+                        <h4 class="card-title">Ilustração</h4>
+                        <h6 class="card-subtitle">Pintura digital</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus voluptatum necessitatibus suscipit?</p>
+                        <a href="#" class="btn btn-primary btn-full">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                <div class="card text-bg-dark">
+                    <img src="https://i.pinimg.com/enabled/564x/a9/54/27/a95427988cbf27c18682b12b4050428d.jpg" alt="Desenho de um gato">
+                    <div class="card-body">
+                        <h4 class="card-title">Ilustração</h4>
+                        <h6 class="card-subtitle">Pintura digital</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum doloribus voluptatum necessitatibus suscipit?</p>
+                        <a href="#" class="btn btn-primary btn-full">Saiba mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de formulario -->
+<section id="secao3">
+    <div class="container form">
+        <h2 class="display-6">Entre em contato</h2>
+            <div class="row">
+                <div class="col">
+                    <!-- Nome -->
+                    <label class="form-label name" for="name">Seu nome:</label>
+                    <input class="form-control" type="text" id="name" placeholder="Nome completo">
+                    <!-- Telefone -->
+                    <label class="form-label phone" for="phone">Seu Telefone:</label>
+                    <input class="form-control" type="tel" id="phone" placeholder="(DDD)00000-0000 ">
+                    <!-- Email -->
+                    <label class="form-label email" for="email">Seu e-mail:</label>
+                    <input class="form-control" type="email" id="email" placeholder="exemplo@gmail.com">
+                    <!-- botão -->
+                    <div class="button">
+                        <button class="btn btn-success">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<footer class="container">
+    <div class="copy">
+        <h6>&copy; Desenvolvidor por João Vitor Algayer Barbosa - 2024</h6>
+    </div>
+</footer>
+
+<script src="./lib/bootstrap.bundle.min.js"></script>
+</body>
+</html>
